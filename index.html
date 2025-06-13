@@ -224,6 +224,15 @@
   <span>สุดท้ายนี้เค้าอยากบอกว่า เค้ารักเบบี๋ที่สุดในโลกเลยน้าาาาาาาาาาาาาา 💗</span>
 </div>
 
+<div id="startPage" style="position:fixed; top:0; left:0; width:100%; height:100%; background:white; display:flex; align-items:center; justify-content:center; z-index:1000;">
+  <button onclick="startSite()" style="padding: 20px 30px; font-size: 1.2em; border-radius: 30px; background-color: #ec407a; color: white; border: none; box-shadow: 0 0 10px #f48fb1;">เริ่มต้น</button>
+</div>
+
+<audio id="bgMusic" loop>
+  <source src="/audio/yung kai - blue (Official Audio).mp3" type="audio/mpeg">
+  เบราว์เซอร์ของคุณไม่รองรับการเล่นเพลง
+</audio>
+
 <script>
   let currentPage = 1;
   function nextPage() {
@@ -245,6 +254,11 @@
     heart.style.left = Math.random() * 100 + 'vw';
     heart.style.animationDuration = (Math.random() * 3 + 3) + 's';
     heartsContainer.appendChild(heart);
+  }
+
+    function startSite() {
+    document.getElementById("startPage").style.display = "none";
+    document.getElementById("bgMusic").play();
   }
 </script>
 </body>
