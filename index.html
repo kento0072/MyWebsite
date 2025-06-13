@@ -228,10 +228,15 @@
   <button onclick="startSite()" style="padding: 20px 30px; font-size: 1.2em; border-radius: 30px; background-color: #ec407a; color: white; border: none; box-shadow: 0 0 10px #f48fb1;">เริ่มต้น</button>
 </div>
 
+<button id="playPauseBtn" class="cute-button" style="margin-top: 20px;">▶️ เล่นเพลง</button>
+
+<!-- ตัวเพลงซ่อน -->
 <audio id="bgMusic" loop>
-  <source src="/audio/yung kai - blue (Official Audio).mp3" type="audio/mpeg">
+  <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mpeg">
   เบราว์เซอร์ของคุณไม่รองรับการเล่นเพลง
 </audio>
+
+
 
 <script>
   let currentPage = 1;
@@ -260,6 +265,18 @@
     document.getElementById("startPage").style.display = "none";
     document.getElementById("bgMusic").play();
   }
+    const music = document.getElementById('bgMusic');
+  const btn = document.getElementById('playPauseBtn');
+
+  btn.addEventListener('click', () => {
+    if (music.paused) {
+      music.play();
+      btn.textContent = '⏸️ หยุดเพลง';
+    } else {
+      music.pause();
+      btn.textContent = '▶️ เล่นเพลง';
+    }
+  });
 </script>
 </body>
 </html>
